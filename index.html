@@ -6,6 +6,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css" />
+
 </head>
 <body>
 <p>Первое - это просто картинка, а вот второй вариант уже специальный файл, который как я понял, делают 3д художники.</p>
@@ -40,6 +41,34 @@
         camera-controls
         style="width: 600px; height: 600px;">
 </model-viewer>
+
+<script src="https://unpkg.com/jquery"></script>
+<script src="https://unpkg.com/spritespin/release/spritespin.min.js"></script>
+
+<div id="spinner" style="width: 500px; height: 500px; border: 1px black solid"></div>
+
+<script>
+    $("#spinner").spritespin({
+        source: [
+            "./images/pack/example1.jpg",
+            "./images/pack/example2.jpg",
+            "./images/pack/example3.jpg",
+            "./images/pack/example4.jpg",
+            "./images/pack/example5.jpg",
+            "./images/pack/example6.jpg",
+            "./images/pack/example7.jpg",
+            "./images/pack/example8.jpg",
+            "./images/pack/example9.jpg",
+            "./images/pack/example10.jpg",
+        ],
+        width: 500,
+        height: 500,
+        frames: 36,
+        sense: -1,
+        frameTime: 60,
+        animate: false,
+    });
+</script>
 
 </body>
 </html>

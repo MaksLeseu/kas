@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css" />
+</head>
+<body>
+<p>Первое - это просто картинка, а вот второй вариант уже специальный файл, который как я понял, делают 3д художники.</p>
+<h1>Image</h1>
+<div id="viewer" style="max-width: 700px; height: 500px; border: 1px black solid"></div>
+
+<script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
+            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js"
+        }
+    }
+</script>
+
+<script type="module">
+    import { Viewer } from '@photo-sphere-viewer/core';
+
+    const viewer = new Viewer({
+        container: document.querySelector('#viewer'),
+        panorama: './images/example1.jpg',
+    });
+</script>
+
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+<h1>3D model</h1>
+<model-viewer
+        src="./files/tree.glb"
+        alt="3D модель"
+        auto-rotate
+        camera-controls
+        style="width: 600px; height: 600px;">
+</model-viewer>
+
+</body>
+</html>
